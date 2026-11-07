@@ -1,0 +1,594 @@
+/* ============================================================
+   MODULEKIT — TOPBAR
+   ============================================================ */
+
+
+/* ============================================================
+   1. TOPBAR
+   ============================================================ */
+
+.eg-topbar {
+  position: sticky;
+  top: 0;
+
+  z-index: 1030;
+
+  width: 100%;
+  min-height: 68px;
+
+  padding: 0 !important;
+
+  background: var(--bg-card) !important;
+
+  border-bottom: 1px solid var(--border-light);
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* ============================================================
+   2. CONTAINER
+   ============================================================ */
+
+.eg-topbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 68px;
+
+  padding: 0 var(--spacing-6);
+}
+
+
+/* ============================================================
+   3. LEFT
+   ============================================================ */
+
+.eg-topbar-left {
+  display: flex;
+  align-items: center;
+
+  gap: var(--spacing-4);
+}
+
+
+/* ============================================================
+   4. SIDEBAR TOGGLE
+   ============================================================ */
+
+.eg-topbar-toggle {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+
+  background: var(--bg-card) !important;
+
+  color: var(--text-secondary) !important;
+
+  box-shadow: none !important;
+
+  transition: var(--transition);
+}
+
+.eg-topbar-toggle:hover {
+  border-color: var(--primary) !important;
+
+  background: var(--primary-subtle) !important;
+
+  color: var(--primary) !important;
+
+  transform: translateY(-1px);
+}
+
+.eg-topbar-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   5. BRAND
+   ============================================================ */
+
+.eg-topbar-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  transition: var(--transition);
+}
+
+.eg-topbar-brand:hover {
+  color: var(--primary);
+}
+
+.eg-topbar-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--accent-gradient);
+
+  color: var(--text-inverse);
+
+  font-size: 16px;
+
+  box-shadow:
+    0 5px 14px rgba(229, 154, 40, 0.18);
+}
+
+.eg-topbar-brand-text {
+  font-family: var(--font-heading);
+
+  font-size: 16px;
+  font-weight: 700;
+
+  letter-spacing: -0.2px;
+}
+
+
+/* ============================================================
+   6. RIGHT
+   ============================================================ */
+
+.eg-topbar-right {
+  display: flex;
+  align-items: center;
+
+  gap: var(--spacing-3);
+}
+
+
+/* ============================================================
+   7. ACTION BUTTON
+   ============================================================ */
+
+.eg-topbar-action {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: var(--radius-md);
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.eg-topbar-action:hover {
+  background: var(--primary-subtle);
+
+  color: var(--primary);
+}
+
+.eg-topbar-action:focus-visible {
+  outline: 2px solid var(--accent);
+
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   8. NOTIFICATION BADGE
+   ============================================================ */
+
+.eg-topbar-notification-badge {
+  position: absolute;
+
+  top: 2px;
+  right: 1px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 17px;
+  height: 17px;
+
+  padding: 0 4px;
+
+  border: 2px solid var(--bg-card);
+
+  background: var(--accent) !important;
+
+  color: var(--text-inverse);
+
+  font-size: 8px;
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   9. PROFILE
+   ============================================================ */
+
+.eg-topbar-profile {
+  display: flex !important;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 5px 8px 5px 5px !important;
+
+  border-radius: var(--radius-full);
+
+  background: transparent !important;
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.eg-topbar-profile:hover {
+  background: var(--primary-subtle) !important;
+}
+
+
+/* ============================================================
+   10. AVATAR
+   ============================================================ */
+
+.eg-topbar-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--primary-gradient);
+
+  color: var(--text-inverse);
+
+  font-family: var(--font-heading);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: var(--shadow-primary);
+}
+.eg-topbar-avatar {
+    overflow: hidden;
+}
+
+.eg-topbar-avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.eg-topbar-avatar-initial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.eg-topbar-dropdown-avatar {
+    overflow: hidden;
+}
+
+.eg-topbar-dropdown-avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================================
+   11. USER INFO
+   ============================================================ */
+
+.eg-topbar-user-info {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 100px;
+
+  line-height: 1.2;
+}
+
+.eg-topbar-user-name {
+  overflow: hidden;
+
+  color: var(--text);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.eg-topbar-user-role {
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+
+/* ============================================================
+   12. CHEVRON
+   ============================================================ */
+
+.eg-topbar-chevron {
+  margin-left: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  transition: var(--transition);
+}
+
+
+/* ============================================================
+   13. DROPDOWN
+   ============================================================ */
+
+.eg-topbar-dropdown {
+  min-width: 260px;
+
+  margin-top: 8px !important;
+  padding: 8px !important;
+
+  border: 1px solid var(--border-light) !important;
+  border-radius: var(--radius-lg) !important;
+
+  background: var(--bg-card) !important;
+
+  box-shadow: var(--shadow-xl) !important;
+}
+
+
+/* ============================================================
+   14. DROPDOWN HEADER
+   ============================================================ */
+
+.eg-topbar-dropdown-header {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--bg);
+}
+
+.eg-topbar-dropdown-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--primary-gradient);
+
+  color: var(--text-inverse);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.eg-topbar-dropdown-user {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.eg-topbar-dropdown-user strong {
+  overflow: hidden;
+
+  color: var(--text);
+
+  font-size: 12px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.eg-topbar-dropdown-user span {
+  margin-top: 3px;
+
+  overflow: hidden;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* ============================================================
+   15. DIVIDER
+   ============================================================ */
+
+.eg-topbar-dropdown-divider {
+  height: 1px;
+
+  margin: 7px 4px;
+
+  background: var(--border-light);
+}
+
+
+/* ============================================================
+   16. DROPDOWN ITEMS
+   ============================================================ */
+
+.eg-topbar-dropdown-item {
+  display: flex !important;
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 40px;
+
+  padding: 8px 10px !important;
+
+  border-radius: var(--radius-md) !important;
+
+  color: var(--text-secondary) !important;
+
+  font-size: 12px;
+
+  transition: var(--transition);
+}
+
+.eg-topbar-dropdown-item i {
+  width: 17px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+
+  transition: var(--transition);
+}
+
+.eg-topbar-dropdown-item:hover {
+  background: var(--primary-subtle) !important;
+
+  color: var(--primary) !important;
+}
+
+.eg-topbar-dropdown-item:hover i {
+  color: var(--primary);
+}
+
+
+/* ============================================================
+   17. LOGOUT
+   ============================================================ */
+
+.eg-topbar-dropdown-logout {
+  color: var(--danger) !important;
+}
+
+.eg-topbar-dropdown-logout i {
+  color: var(--danger);
+}
+
+.eg-topbar-dropdown-logout:hover {
+  background: var(--danger-light) !important;
+
+  color: var(--danger) !important;
+}
+
+
+/* ============================================================
+   18. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+
+  .eg-topbar-container {
+    padding: 0 var(--spacing-4);
+  }
+
+  .eg-topbar-brand {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 575.98px) {
+
+  .eg-topbar {
+    min-height: 62px;
+  }
+
+  .eg-topbar-container {
+    min-height: 62px;
+
+    padding: 0 var(--spacing-3);
+  }
+
+  .eg-topbar-right {
+    gap: 4px;
+  }
+
+  .eg-topbar-toggle,
+  .eg-topbar-action {
+    width: 38px;
+    height: 38px;
+  }
+
+  /*
+   * On conserve uniquement l'avatar
+   * sur les très petits écrans.
+   */
+
+  .eg-topbar-user-info {
+    display: none;
+  }
+
+  .eg-topbar-chevron {
+    display: none;
+  }
+
+  .eg-topbar-profile {
+    padding-right: 5px !important;
+  }
+
+  .eg-topbar-dropdown {
+    min-width: 240px;
+
+    max-width: calc(100vw - 24px);
+  }
+
+}

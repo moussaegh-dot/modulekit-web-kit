@@ -1,0 +1,50 @@
+/* =========================================================
+   CRUD PAGE
+========================================================= */
+
+.crud-page {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.crud-page-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 180px;
+
+  color: var(--text-muted);
+
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.crud-page-alert {
+  display: flex;
+  align-items: center;
+
+  min-height: 54px;
+
+  padding: var(--spacing-4);
+
+  border-radius: var(--radius-md);
+
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+.crud-page-alert--danger {
+  border: 1px solid rgba(217, 74, 74, 0.18);
+
+  background: var(--danger-light);
+  color: var(--danger);
+}

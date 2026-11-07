@@ -1,0 +1,332 @@
+/* =========================================================
+   FORM FIELDS
+========================================================= */
+
+.form-field-wrapper {
+    width: 100%;
+    margin-bottom: var(--spacing-5);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.form-field-label {
+    display: block;
+
+    margin-bottom: var(--spacing-2);
+
+    color: var(--text);
+
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+.form-field-label::after {
+    content: "";
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-field-input,
+.form-field-select,
+.form-field-textarea {
+    width: 100%;
+
+    min-height: 44px;
+
+    color: var(--text);
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+
+    transition: var(--transition);
+}
+
+.form-field-input {
+    padding: 10px 13px;
+}
+
+.form-field-select {
+    padding: 10px 38px 10px 13px;
+
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+.form-field-textarea {
+    min-height: auto;
+
+    padding: 11px 13px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.form-field-input:focus,
+.form-field-select:focus,
+.form-field-textarea:focus {
+    color: var(--text);
+    background: var(--bg-card);
+
+    border-color: var(--primary);
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px rgba(216, 138, 22, 0.12);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.form-field-input::placeholder,
+.form-field-textarea::placeholder {
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   INVALID
+========================================================= */
+
+.form-field-input.is-invalid,
+.form-field-select.is-invalid,
+.form-field-textarea.is-invalid {
+    border-color: var(--danger);
+}
+
+.form-field-input.is-invalid:focus,
+.form-field-select.is-invalid:focus,
+.form-field-textarea.is-invalid:focus {
+    border-color: var(--danger);
+
+    box-shadow:
+        0 0 0 3px rgba(217, 74, 74, 0.10);
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.form-field-error {
+    display: flex;
+    align-items: flex-start;
+
+    gap: var(--spacing-2);
+
+    margin-top: var(--spacing-2);
+
+    color: var(--danger);
+
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.form-field-error i {
+    margin-top: 2px;
+
+    flex-shrink: 0;
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   HELP TEXT
+========================================================= */
+
+.form-field-help {
+    margin-top: var(--spacing-2);
+
+    color: var(--text-muted);
+
+    font-size: 0.75rem;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+.form-field-password {
+    position: relative;
+}
+
+.form-field-password .form-field-input {
+    padding-right: 46px;
+}
+
+.form-field-password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    color: var(--text-muted);
+    background: transparent;
+
+    border: 0;
+    border-radius: var(--radius-sm);
+
+    transform: translateY(-50%);
+
+    cursor: pointer;
+
+    transition: var(--transition-fast);
+}
+
+.form-field-password-toggle:hover {
+    color: var(--primary-dark);
+    background: var(--primary-light);
+}
+
+.form-field-password-toggle:focus {
+    outline: none;
+
+    color: var(--primary-dark);
+
+    box-shadow:
+        0 0 0 2px rgba(216, 138, 22, 0.12);
+}
+
+
+/* =========================================================
+   FILE
+========================================================= */
+
+.form-field-file {
+    padding: 8px 10px;
+
+    cursor: pointer;
+}
+
+.form-field-file::file-selector-button {
+    margin-right: var(--spacing-3);
+
+    padding: 7px 12px;
+
+    color: var(--primary-dark);
+    background: var(--primary-light);
+
+    border: 0;
+    border-radius: var(--radius-sm);
+
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition-fast);
+}
+
+.form-field-file::file-selector-button:hover {
+    color: var(--text-inverse);
+    background: var(--primary-dark);
+}
+
+.form-field-file-info {
+    display: flex;
+    align-items: center;
+
+    gap: var(--spacing-2);
+
+    margin-top: var(--spacing-2);
+
+    color: var(--text-secondary);
+
+    font-size: 0.75rem;
+}
+
+.form-field-file-info i {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.form-field-switch {
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   MDB OVERRIDES
+========================================================= */
+
+/*
+ * MDBInput / MDBTextArea peuvent injecter leurs propres
+ * couleurs et bordures. Ces règles permettent de conserver
+ * l'identité visuelle de l'application.
+ */
+
+.form-field-wrapper .form-outline {
+    width: 100%;
+}
+
+.form-field-wrapper .form-control {
+    color: var(--text);
+}
+
+.form-field-wrapper .form-control:focus {
+    border-color: var(--primary);
+}
+
+.form-field-wrapper .form-outline .form-notch {
+    display: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .form-field-wrapper {
+        margin-bottom: var(--spacing-4);
+    }
+
+    .form-field-label {
+        font-size: 0.8rem;
+    }
+
+    .form-field-input,
+    .form-field-select {
+        min-height: 42px;
+    }
+}

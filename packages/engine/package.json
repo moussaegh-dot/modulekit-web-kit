@@ -1,0 +1,24 @@
+{
+  "name": "@moussaegh-dot/modulekit-engine",
+  "version": "0.1.0",
+  "description": "Moteur piloté par manifeste : modules, pages, routes, registres, configuration du kit.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./*": "./src/*"
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@moussaegh-dot/modulekit-http": "*",
+    "@moussaegh-dot/modulekit-auth": "*"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^19.0.0",
+    "react-router-dom": "^7.0.0"
+  }
+}

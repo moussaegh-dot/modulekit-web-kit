@@ -1,0 +1,158 @@
+/* ============================================================
+   MODULEKIT — MAIN LAYOUT
+   ============================================================ */
+
+
+/* ============================================================
+   1. LAYOUT GLOBAL
+   ============================================================ */
+
+.eg-main-layout {
+  min-height: 100vh;
+
+  background: var(--bg);
+
+  color: var(--text);
+}
+
+
+/* ============================================================
+   2. ZONE PRINCIPALE
+   ============================================================ */
+
+.eg-main-content-wrapper {
+  min-height: 100vh;
+
+  margin-left: var(--sidebar-width);
+
+  transition:
+    margin-left 0.25s ease;
+}
+
+
+/* ============================================================
+   3. SIDEBAR COLLAPSÉE
+   ============================================================ */
+
+.eg-main-layout.eg-sidebar-collapsed
+.eg-main-content-wrapper {
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+
+/* ============================================================
+   4. CONTENU DES PAGES
+   ============================================================ */
+
+.eg-page-main {
+  position: relative;
+
+  min-height: calc(100vh - 68px);
+
+  background: var(--bg);
+}
+
+.eg-page-container {
+  width: 100%;
+
+
+  margin: 0 auto;
+
+  padding: var(--spacing-2);
+}
+
+
+/* ============================================================
+   5. OVERLAY MOBILE
+   ============================================================ */
+
+.eg-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1035;
+
+  background: rgba(22, 43, 54, 0.45);
+
+  backdrop-filter: blur(2px);
+
+  animation: eg-overlay-in 0.2s ease;
+}
+
+@keyframes eg-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ============================================================
+   6. LOADING
+   ============================================================ */
+
+.eg-loading-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  padding: var(--spacing-6);
+
+  background: var(--bg);
+
+  color: var(--text);
+}
+
+.eg-loading-text {
+  margin-top: var(--spacing-4);
+
+  color: var(--text-secondary);
+
+  font-family: var(--font-ui);
+
+  font-size: 13px;
+}
+
+
+/* ============================================================
+   7. RESPONSIVE — TABLET
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+
+  .eg-main-content-wrapper,
+  .eg-main-layout.eg-sidebar-collapsed
+  .eg-main-content-wrapper {
+    margin-left: 0;
+  }
+
+  .eg-page-main {
+    min-height: calc(100vh - 62px);
+  }
+
+  .eg-page-container {
+    padding: var(--spacing-5);
+  }
+
+}
+
+
+/* ============================================================
+   8. RESPONSIVE — MOBILE
+   ============================================================ */
+
+@media (max-width: 575.98px) {
+
+  .eg-page-container {
+    padding: var(--spacing-4);
+  }
+
+}

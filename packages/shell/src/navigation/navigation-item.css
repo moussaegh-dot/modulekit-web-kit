@@ -1,0 +1,334 @@
+/* ============================================================
+   MODULEKIT — NAVIGATION ITEM
+   ============================================================ */
+
+
+/* ============================================================
+   1. ÉLÉMENT DE NAVIGATION
+   ============================================================ */
+
+.sidebar-navigation-item {
+  display: flex !important;
+  align-items: center;
+  width: 100%;
+
+  min-height: 44px;
+
+  margin-bottom: 3px;
+  padding: 8px 10px !important;
+
+  border: 0 !important;
+  border-radius: var(--radius-md) !important;
+
+  background: transparent !important;
+
+  color: var(--sidebar-text) !important;
+
+  text-decoration: none;
+
+  font-family: var(--font-ui);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition: var(--transition);
+}
+
+
+/* ============================================================
+   2. CONTENU
+   ============================================================ */
+
+.sidebar-navigation-content {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  min-width: 0;
+
+  gap: 10px;
+}
+
+
+/* ============================================================
+   3. ICÔNE
+   ============================================================ */
+
+.sidebar-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  border-radius: var(--radius-sm);
+
+  color: var(--sidebar-text);
+
+  transition: var(--transition);
+}
+
+.sidebar-icon {
+  font-size: 14px;
+}
+
+
+/* ============================================================
+   4. LABEL
+   ============================================================ */
+
+.sidebar-navigation-label {
+  flex: 1;
+
+  overflow: hidden;
+
+  color: inherit;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* ============================================================
+   5. HOVER
+   ============================================================ */
+
+.sidebar-navigation-item:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+
+  color: var(--sidebar-text-active) !important;
+}
+
+.sidebar-navigation-item:hover .sidebar-icon-wrapper {
+  color: var(--accent);
+}
+
+
+/* ============================================================
+   6. ÉLÉMENT ACTIF
+   ============================================================ */
+
+.sidebar-navigation-item.active {
+  background: rgba(15, 118, 110, 0.30) !important;
+
+  color: var(--sidebar-text-active) !important;
+
+  box-shadow:
+    inset 3px 0 0 var(--accent);
+}
+
+.sidebar-navigation-item.active .sidebar-icon-wrapper {
+  background: rgba(15, 118, 110, 0.45);
+
+  color: var(--accent);
+}
+
+.sidebar-navigation-item.active .sidebar-navigation-label {
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   7. NAVIGATION COLLAPSÉE
+   ============================================================ */
+
+.sidebar-navigation-item.collapsed {
+  justify-content: center;
+
+  padding: 7px !important;
+}
+
+.sidebar-navigation-item.collapsed
+.sidebar-navigation-content {
+  justify-content: center;
+}
+
+.sidebar-navigation-item.collapsed
+.sidebar-icon-wrapper {
+  width: 38px;
+  height: 38px;
+}
+
+
+/* ============================================================
+   8. GROUPES
+   ============================================================ */
+
+.sidebar-group {
+  width: 100%;
+}
+
+
+/* ============================================================
+   9. EN-TÊTE DU GROUPE
+   ============================================================ */
+
+.sidebar-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  min-height: 44px;
+
+  margin-bottom: 3px;
+  padding: 8px 10px;
+
+  border: 0;
+  border-radius: var(--radius-md);
+
+  background: transparent;
+
+  color: var(--sidebar-text);
+
+  font-family: var(--font-ui);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.sidebar-group-header:hover {
+  background: rgba(255, 255, 255, 0.06);
+
+  color: var(--sidebar-text-active);
+}
+
+.sidebar-group-header:hover
+.sidebar-icon-wrapper {
+  color: var(--accent);
+}
+
+
+/* ============================================================
+   10. GROUPE OUVERT
+   ============================================================ */
+
+.sidebar-group-header.expanded {
+  background: rgba(255, 255, 255, 0.04);
+
+  color: var(--sidebar-text-active);
+}
+
+.sidebar-group-header.expanded
+.sidebar-icon-wrapper {
+  color: var(--accent);
+}
+
+
+/* ============================================================
+   11. GROUPE COLLAPSÉ
+   ============================================================ */
+
+.sidebar-group-header.collapsed {
+  justify-content: center;
+
+  padding: 7px;
+}
+
+.sidebar-group-header.collapsed
+.sidebar-navigation-content {
+  justify-content: center;
+}
+
+.sidebar-group-header.collapsed
+.sidebar-icon-wrapper {
+  width: 38px;
+  height: 38px;
+}
+
+
+/* ============================================================
+   12. CHEVRON
+   ============================================================ */
+
+.sidebar-chevron {
+  flex-shrink: 0;
+
+  margin-left: 8px;
+
+  color: var(--sidebar-text);
+
+  font-size: 10px;
+
+  transition: var(--transition);
+}
+
+.sidebar-group-header:hover .sidebar-chevron {
+  color: var(--accent);
+}
+
+
+/* ============================================================
+   13. SOUS-MENUS
+   ============================================================ */
+
+.sidebar-children {
+  position: relative;
+
+  margin: 2px 0 6px 16px;
+  padding-left: 13px;
+}
+
+.sidebar-children::before {
+  content: "";
+
+  position: absolute;
+
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+
+  width: 1px;
+
+  background: rgba(255, 255, 255, 0.10);
+}
+
+
+/*
+ * Les sous-éléments sont légèrement plus discrets.
+ */
+
+.sidebar-children
+.sidebar-navigation-item {
+  min-height: 40px;
+
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   14. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 991.98px) {
+
+  .sidebar-navigation-item {
+    min-height: 46px;
+  }
+
+  .sidebar-group-header {
+    min-height: 46px;
+  }
+
+}
+
+
+/* ============================================================
+   15. ACCESSIBILITÉ
+   ============================================================ */
+
+.sidebar-navigation-item:focus-visible,
+.sidebar-group-header:focus-visible {
+  outline: 2px solid var(--accent);
+
+  outline-offset: 2px;
+}

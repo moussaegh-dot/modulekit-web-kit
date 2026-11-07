@@ -1,0 +1,456 @@
+/* =========================================================
+   CRUD TABLE
+   ModuleKit
+========================================================= */
+
+.crud-table-wrapper {
+  width: 100%;
+
+  overflow: hidden;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.crud-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.crud-table-scroll::-webkit-scrollbar {
+  height: 7px;
+}
+
+.crud-table-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.crud-table-scroll::-webkit-scrollbar-thumb {
+  border-radius: var(--radius-full);
+  background: var(--border);
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.crud-table {
+  width: 100%;
+  min-width: 760px;
+
+  margin: 0;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  color: var(--text);
+
+  font-family: var(--font-ui);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.crud-table-head {
+  background: var(--bg-alt);
+}
+
+.crud-table-th {
+  height: 52px;
+
+  padding: 0 var(--spacing-4);
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.crud-table-th:first-child {
+  padding-left: var(--spacing-5);
+}
+
+.crud-table-th:last-child {
+  padding-right: var(--spacing-5);
+}
+
+.crud-table-th--sortable {
+  cursor: pointer;
+
+  transition: var(--transition-fast);
+}
+
+.crud-table-th--sortable:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.crud-table-header-content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* =========================================================
+   SORT
+========================================================= */
+
+.crud-table-sort-icon {
+  color: var(--text-light);
+
+  font-size: 10px;
+
+  transition: var(--transition-fast);
+}
+
+.crud-table-th--sortable:hover
+.crud-table-sort-icon {
+  color: var(--primary);
+}
+
+.crud-table-sort-icon--active {
+  color: var(--primary);
+}
+
+/* =========================================================
+   ACTIONS HEADER
+========================================================= */
+
+.crud-table-th--actions {
+  width: 160px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   ROWS
+========================================================= */
+
+.crud-table-row {
+  background: var(--bg-card);
+
+  transition: var(--transition-fast);
+}
+
+.crud-table-row:hover {
+  background: var(--primary-subtle);
+}
+
+.crud-table-row:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================================
+   CELL
+========================================================= */
+
+.crud-table td {
+  height: 62px;
+
+  padding: var(--spacing-3) var(--spacing-4);
+
+  border-bottom: 1px solid var(--border-light);
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+
+  vertical-align: middle;
+}
+
+.crud-table td:first-child {
+  padding-left: var(--spacing-5);
+
+  color: var(--text);
+  font-weight: 600;
+}
+
+.crud-table td:last-child {
+  padding-right: var(--spacing-5);
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.crud-table-actions-cell {
+  width: 160px;
+
+  text-align: center;
+}
+
+.crud-table-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+}
+
+.crud-table-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  background: var(--bg-card);
+  color: var(--text-muted);
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition: var(--transition-fast);
+}
+
+.crud-table-action:hover:not(:disabled) {
+  border-color: var(--primary);
+
+  background: var(--primary-light);
+  color: var(--primary-dark);
+
+  transform: translateY(-1px);
+}
+
+.crud-table-action:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   ACTION COLORS
+========================================================= */
+
+.crud-table-action--primary {
+  color: var(--primary);
+}
+
+.crud-table-action--success {
+  color: var(--success);
+}
+
+.crud-table-action--danger {
+  color: var(--danger);
+}
+
+.crud-table-action--warning {
+  color: var(--warning);
+}
+
+.crud-table-action--info {
+  color: var(--info);
+}
+
+.crud-table-action--secondary {
+  color: var(--text-muted);
+}
+
+/* Hover spécifique */
+
+.crud-table-action--success:hover:not(:disabled) {
+  border-color: var(--success);
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.crud-table-action--danger:hover:not(:disabled) {
+  border-color: var(--danger);
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.crud-table-action--warning:hover:not(:disabled) {
+  border-color: var(--warning);
+  background: var(--warning-light);
+  color: var(--warning);
+}
+
+.crud-table-action--info:hover:not(:disabled) {
+  border-color: var(--info);
+  background: var(--info-light);
+  color: var(--info);
+}
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.crud-table-empty {
+  height: 180px;
+
+  padding: var(--spacing-8) !important;
+
+  text-align: center;
+}
+
+.crud-table-empty-content {
+  display: inline-flex;
+  align-items: center;
+
+  gap: var(--spacing-4);
+
+  text-align: left;
+}
+
+.crud-table-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--bg-alt);
+  color: var(--text-light);
+
+  font-size: 20px;
+}
+
+.crud-table-empty-content strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--text);
+
+  font-family: var(--font-heading);
+  font-size: 14px;
+}
+
+.crud-table-empty-content span {
+  display: block;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   GLOBAL EMPTY ALERT
+========================================================= */
+
+.crud-table-empty-alert {
+  display: flex;
+  align-items: center;
+
+  gap: var(--spacing-3);
+
+  padding: var(--spacing-4);
+
+  border: 1px solid rgba(216, 138, 22, 0.18);
+  border-radius: var(--radius-md);
+
+  background: var(--warning-light);
+  color: var(--text-secondary);
+}
+
+.crud-table-empty-alert .crud-table-empty-icon {
+  flex: 0 0 36px;
+
+  width: 36px;
+  height: 36px;
+
+  background: rgba(216, 138, 22, 0.12);
+  color: var(--warning);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.crud-table-empty-alert strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: var(--text);
+
+  font-size: 13px;
+}
+
+.crud-table-empty-alert span:last-child {
+  display: block;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.crud-table-action:focus-visible,
+.crud-table-th--sortable:focus-visible {
+  outline: 3px solid rgba(216, 138, 22, 0.15);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+  .crud-table-wrapper {
+    border-radius: var(--radius-md);
+  }
+
+  .crud-table {
+    min-width: 680px;
+  }
+
+  .crud-table-th {
+    height: 48px;
+
+    padding: 0 var(--spacing-3);
+
+    font-size: 10px;
+  }
+
+  .crud-table td {
+    height: 56px;
+
+    padding: var(--spacing-3);
+
+    font-size: 12px;
+  }
+
+  .crud-table-actions-cell,
+  .crud-table-th--actions {
+    width: 130px;
+  }
+
+  .crud-table-action {
+    width: 32px;
+    height: 32px;
+  }
+}

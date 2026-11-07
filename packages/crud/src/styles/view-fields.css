@@ -1,0 +1,432 @@
+/* =========================================================
+   VIEW FIELDS
+   ModuleKit
+========================================================= */
+
+.view-field-wrapper {
+    position: relative;
+    margin-bottom: var(--spacing-4);
+    color: var(--text);
+}
+
+.view-field-wrapper-sm {
+    margin-bottom: var(--spacing-2);
+}
+
+.view-field-wrapper-md {
+    margin-bottom: var(--spacing-3);
+}
+
+.view-field-wrapper-lg {
+    margin-bottom: var(--spacing-4);
+}
+
+.view-field-padded {
+    padding: var(--spacing-2) 0;
+}
+
+.view-field-highlight {
+    padding-left: var(--spacing-3);
+    border-left: 3px solid var(--view-field-highlight);
+    border-radius: var(--radius-sm);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.view-field-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 6px;
+
+    color: var(--text-muted);
+
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.view-field-label-icon {
+    color: var(--primary-dark);
+    font-size: 0.75rem;
+}
+
+.view-field-required {
+    color: var(--danger);
+}
+
+.view-field-help {
+    color: var(--text-light);
+    font-size: 0.7rem;
+    cursor: help;
+}
+
+.view-field-help:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   VALUE
+========================================================= */
+
+.view-field-value {
+    margin-top: 2px;
+}
+
+.view-field-empty {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+
+/* =========================================================
+   HELP TEXT
+========================================================= */
+
+.view-field-help-text {
+    margin-top: 5px;
+
+    color: var(--text-light);
+
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.view-avatar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-avatar-wrapper {
+    position: relative;
+}
+
+.view-avatar {
+    display: block;
+
+    width: 96px;
+    height: 96px;
+
+    object-fit: cover;
+
+    border: 3px solid var(--bg-card);
+    border-radius: var(--radius-full);
+
+    box-shadow: var(--shadow-md);
+}
+
+.view-avatar-status {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+
+    width: 18px;
+    height: 18px;
+
+    background: var(--success);
+
+    border: 3px solid var(--bg-card);
+    border-radius: var(--radius-full);
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.view-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: var(--radius-full);
+
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.view-badge i {
+    font-size: 0.65rem;
+}
+
+.view-badge-primary {
+    color: var(--primary-dark);
+    background: var(--primary-light);
+}
+
+.view-badge-success {
+    color: var(--success);
+    background: var(--success-light);
+}
+
+.view-badge-warning {
+    color: var(--accent-dark);
+    background: var(--warning-light);
+}
+
+.view-badge-danger {
+    color: var(--danger);
+    background: var(--danger-light);
+}
+
+.view-badge-info {
+    color: var(--info);
+    background: var(--info-light);
+}
+
+.view-badge-neutral {
+    color: var(--text-secondary);
+    background: var(--bg-alt);
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.view-date {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+
+.view-date-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    color: var(--primary-dark);
+    background: var(--primary-light);
+
+    border-radius: var(--radius-sm);
+
+    font-size: 0.85rem;
+}
+
+.view-date-value {
+    color: var(--text);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.view-date-relative {
+    margin-top: 2px;
+
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: capitalize;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.view-email {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+
+    min-width: 0;
+}
+
+.view-email-icon {
+    flex-shrink: 0;
+    color: var(--primary);
+    font-size: 0.875rem;
+}
+
+.view-email-link {
+    color: var(--primary-dark);
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: var(--transition-fast);
+}
+
+.view-email-link:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+}
+
+.view-copy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    padding: 0;
+
+    color: var(--text-muted);
+    background: transparent;
+
+    border: 0;
+    border-radius: var(--radius-sm);
+
+    cursor: pointer;
+
+    transition: var(--transition-fast);
+}
+
+.view-copy-button:hover {
+    color: var(--primary-dark);
+    background: var(--primary-light);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.view-number {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.view-number-icon {
+    align-self: center;
+
+    color: var(--primary);
+    font-size: 0.85rem;
+}
+
+.view-number-value {
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.view-number-suffix {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.view-select {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.view-select-icon {
+    color: var(--text-light);
+    font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.view-text {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+}
+
+.view-text-icon {
+    flex-shrink: 0;
+
+    margin-top: 3px;
+
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+.view-text-content {
+    min-width: 0;
+}
+
+.view-text-value {
+    color: var(--text);
+
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+.view-text-hint {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--text-light);
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .view-field-wrapper {
+        margin-bottom: var(--spacing-3);
+    }
+
+    .view-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .view-email-link {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .view-date-value,
+    .view-text-value {
+        font-size: 0.8125rem;
+    }
+}
+
+/* =========================================================
+   INLINE VIEW FIELD
+========================================================= */
+
+.view-field-inline {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.view-field-inline-label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+}

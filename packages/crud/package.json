@@ -1,0 +1,28 @@
+{
+  "name": "@moussaegh-dot/modulekit-crud",
+  "version": "0.1.0",
+  "description": "Moteur CRUD (tables, filtres, pagination) et moteur de formulaires/modales pilotés par le manifeste.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./*": "./src/*"
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@moussaegh-dot/modulekit-http": "*",
+    "@moussaegh-dot/modulekit-auth": "*",
+    "@moussaegh-dot/modulekit-engine": "*",
+    "@moussaegh-dot/modulekit-shell": "*"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^19.0.0",
+    "react-router-dom": "^7.0.0",
+    "mdb-react-ui-kit": "^10.0.0",
+    "prop-types": "^15.8.0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@moussaegh-dot/modulekit-http",
+  "version": "0.1.0",
+  "description": "Client HTTP Laravel Sanctum (CSRF, 401), utilitaires, createResourceApi, usePaginatedResource, Echo/Reverb paresseux.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./*": "./src/*"
+  },
+  "files": [
+    "src"
+  ],
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19.0.0",
+    "axios": "^1.7.0",
+    "laravel-echo": "^2.0.0",
+    "pusher-js": "^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "laravel-echo": {
+      "optional": true
+    },
+    "pusher-js": {
+      "optional": true
+    }
+  }
+}

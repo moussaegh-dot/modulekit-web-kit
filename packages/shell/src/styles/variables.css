@@ -1,0 +1,123 @@
+/* src/styles/variables.css */
+
+:root {
+  /* ============================================
+     COULEURS PRINCIPALES — Orange signature
+  ============================================ */
+  --primary: #D88A16;
+  --primary-dark: #B5700F;
+  --primary-gradient: linear-gradient(135deg, #E59A28 0%, #C97712 100%);
+  --primary-light: #FCEFD9;
+  --primary-subtle: #FDF7EC;
+
+  /* Teal conservé comme couleur d'ambiance secondaire */
+  --teal: #0F766E;
+  --teal-dark: #115E59;
+  --teal-light: #E6F7F5;
+  --teal-subtle: #F0FDFA;
+
+  /* ============================================
+     ACCENT
+  ============================================ */
+  --accent: #E59A28;
+  --accent-dark: #C97712;
+  --accent-light: #FFF5DF;
+  --accent-gradient: linear-gradient(135deg, #F4B942 0%, #DF8A1D 100%);
+
+  /* ============================================
+     SÉMANTIQUES
+  ============================================ */
+  --success: #168A5B;
+  --success-light: #EAF8F1;
+  --danger: #D94A4A;
+  --danger-light: #FDEEEE;
+  --warning: #D88A16;
+  --warning-light: #FFF7E8;
+  --info: #2476B8;
+  --info-light: #EAF4FC;
+
+  /* ============================================
+     FONDS
+  ============================================ */
+  --bg: #F6F8F7;
+  --bg-alt: #EDF3F1;
+  --bg-card: #FFFFFF;
+
+  /* ============================================
+     TEXTES
+  ============================================ */
+  --text: #162B36;
+  --text-secondary: #40545D;
+  --text-muted: #65767D;
+  --text-light: #8A999E;
+  --text-inverse: #FFFFFF;
+
+  /* ============================================
+     BORDURES
+  ============================================ */
+  --border: #DDE7E4;
+  --border-light: #EDF2F0;
+
+  /* ============================================
+     TYPOGRAPHIE
+  ============================================ */
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Poppins", "Inter", sans-serif;
+  --font-icon: "Font Awesome 6 Free"; /* 👈 nouvelle */
+
+  /* ============================================
+     RADIUS
+  ============================================ */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ============================================
+     SHADOWS
+  ============================================ */
+  --shadow-sm: 0 1px 3px rgba(22, 43, 54, 0.06);
+  --shadow-md: 0 4px 12px rgba(22, 43, 54, 0.07);
+  --shadow-lg: 0 10px 28px rgba(22, 43, 54, 0.10);
+  --shadow-xl: 0 16px 44px rgba(22, 43, 54, 0.14);
+  --shadow-primary: 0 8px 20px rgba(216, 138, 22, 0.24);
+  --shadow-teal: 0 8px 20px rgba(15, 118, 110, 0.20);
+
+  /* ============================================
+     TRANSITIONS
+  ============================================ */
+  --transition: all 0.25s ease;
+  --transition-slow: all 0.4s ease;
+  --transition-fast: all 0.15s ease;
+
+  /* ============================================
+     SPACING
+  ============================================ */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+
+  /* ============================================
+     SIDEBAR
+  ============================================ */
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 72px;
+  --sidebar-bg: linear-gradient(180deg, #103B4A 0%, #162B36 100%);
+  --sidebar-text: rgba(255, 255, 255, 0.72);
+  --sidebar-text-active: #FFFFFF;
+
+  /* ============================================
+     NAVBAR — hauteurs (👈 nouveau)
+  ============================================ */
+  --navbar-height: 72px;
+  --navbar-height-compact: 56px;
+}

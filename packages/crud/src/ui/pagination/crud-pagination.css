@@ -1,0 +1,232 @@
+/* =========================================================
+   CRUD PAGINATION
+   ModuleKit
+========================================================= */
+
+.crud-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+
+  width: 100%;
+
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-5);
+
+  border-top: 1px solid var(--border);
+
+  font-family: var(--font-ui);
+}
+
+/* =========================================================
+   PAGES
+========================================================= */
+
+.crud-pagination-pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+
+  flex: 1;
+}
+
+.crud-pagination-page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+
+  background: var(--bg-card);
+  color: var(--text-secondary);
+
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition-fast);
+}
+
+.crud-pagination-page:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary-dark);
+
+  transform: translateY(-1px);
+}
+
+.crud-pagination-page--active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--text-inverse);
+
+  box-shadow: var(--shadow-primary);
+}
+
+.crud-pagination-page--active:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: var(--text-inverse);
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   ELLIPSIS
+========================================================= */
+
+.crud-pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 38px;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   NAVIGATION BUTTONS
+========================================================= */
+
+.crud-pagination-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+
+  min-width: 116px;
+  height: 38px;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+
+  background: var(--bg-card);
+  color: var(--text-secondary);
+
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: var(--transition-fast);
+}
+
+.crud-pagination-nav:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary-dark);
+
+  transform: translateY(-1px);
+}
+
+.crud-pagination-nav:disabled {
+  opacity: 0.45;
+
+  background: var(--bg-alt);
+  color: var(--text-light);
+
+  cursor: not-allowed;
+}
+
+.crud-pagination-nav-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.crud-pagination-page:focus-visible,
+.crud-pagination-nav:focus-visible {
+  outline: 3px solid rgba(216, 138, 22, 0.18);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+  .crud-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: var(--spacing-3);
+  }
+
+  .crud-pagination-pages {
+    order: 1;
+
+    width: 100%;
+    flex: none;
+  }
+
+  .crud-pagination-nav {
+    order: 2;
+
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 479.98px) {
+
+  .crud-pagination {
+    gap: var(--spacing-2);
+  }
+
+  .crud-pagination-pages {
+    gap: 5px;
+
+    overflow-x: auto;
+    justify-content: flex-start;
+
+    padding: 2px;
+    scrollbar-width: none;
+  }
+
+  .crud-pagination-pages::-webkit-scrollbar {
+    display: none;
+  }
+
+  .crud-pagination-page {
+    flex: 0 0 34px;
+
+    width: 34px;
+    height: 34px;
+
+    font-size: 12px;
+  }
+
+  .crud-pagination-ellipsis {
+    flex: 0 0 24px;
+    width: 24px;
+  }
+
+  .crud-pagination-nav {
+    height: 36px;
+    padding: 0 10px;
+
+    font-size: 11px;
+  }
+}

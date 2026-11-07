@@ -1,0 +1,31 @@
+{
+  "name": "modulekit-playground",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Application de développement du kit : sert à tester les packages contre une API modulekit-core.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@moussaegh-dot/modulekit-auth": "*",
+    "@moussaegh-dot/modulekit-crud": "*",
+    "@moussaegh-dot/modulekit-engine": "*",
+    "@moussaegh-dot/modulekit-http": "*",
+    "@moussaegh-dot/modulekit-shell": "*",
+    "axios": "^1.17.0",
+    "bootstrap": "^5.3.8",
+    "mdb-react-ui-kit": "^10.0.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.17.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.12"
+  }
+}

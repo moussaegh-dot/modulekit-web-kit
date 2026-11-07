@@ -1,0 +1,22 @@
+{
+  "name": "modulekit-web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ModuleKit Web : kit front React/Vite piloté par manifeste, pendant de modulekit-core (Laravel).",
+  "workspaces": [
+    "packages/*",
+    "playground"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace playground",
+    "build": "npm run build --workspace playground",
+    "check:imports": "node tools/check-imports.mjs",
+    "check:exports": "node tools/check-exports.mjs",
+    "check:contract": "node tools/check-contract.mjs",
+    "test": "node --test \"packages/*/test/*.test.mjs\" \"tools/test/*.test.mjs\"",
+    "verify": "npm run check:imports && npm run check:exports && npm test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
