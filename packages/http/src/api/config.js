@@ -13,6 +13,9 @@ const config = {
     "/api/auth/login",
     "/sanctum/csrf-cookie",
   ],
+  // Codes d'erreur (champ `code` de la réponse JSON) qui, avec un 403, signifient « session perdue »
+  // (ex. compte suspendu) : ils déclenchent onUnauthorized comme une 401. Vide par défaut.
+  unauthorizedErrorCodes: [],
   onUnauthorized: null,
 };
 

@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 
 import ModulePermissionAdapter from "../src/ModulePermissionAdapter.js";
 import { AuthState } from "../src/authState.js";
+import { authEndpoints, configureAuthEndpoints, fillEndpoint } from "../src/endpoints.js";
 
 test("ModulePermissionAdapter : index par module, can, canModule", () => {
   const p = new ModulePermissionAdapter(["users.view", "users.create", "roles.view.any", "mal-forme", 42, null]);
@@ -34,4 +35,21 @@ test("AuthState : abonnement, notification, désabonnement", () => {
 
   assert.deepEqual(seen, [7]);
   assert.equal(AuthState.getUser(), null);
+});
+
+test("fillEndpoint : remplace et encode les paramètres, tolère l'absence", () => {
+  assert.equal(fillEndpoint("/api/auth/email/verify/{id}/{hash}", { id: 12, hash: "ab/cd e" }), "/api/auth/email/verify/12/ab%2Fcd%20e");
+  assert.equal(fillEndpoint("/api/x/{absent}", {}), "/api/x/");
+  assert.equal(fillEndpoint("/api/sans-parametre"), "/api/sans-parametre");
+});
+
+test("authEndpoints : valeurs par défaut du cycle de vie du compte et surcharge", () => {
+  assert.equal(authEndpoints.forgotPassword, "/api/auth/forgot-password");
+  assert.equal(authEndpoints.changePassword, "/api/auth/password");
+  assert.equal(authEndpoints.verifyEmail, "/api/auth/email/verify/{id}/{hash}");
+
+  const avant = authEndpoints.login;
+  configureAuthEndpoints({ login: "/api/v2/login" });
+  assert.equal(authEndpoints.login, "/api/v2/login");
+  configureAuthEndpoints({ login: avant });
 });

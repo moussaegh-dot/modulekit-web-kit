@@ -12,6 +12,7 @@ import {
 import {
     login as loginRequest,
     logout as logoutRequest,
+    logoutAll as logoutAllRequest,
     register as registerRequest,
     fetchUser,
 } from "./authService";
@@ -43,6 +44,8 @@ export function defaultMapUser(payload) {
         permissions: payload.permissions ?? [],
         dashboardRoute: payload.dashboard_route ?? "/",
         photo_profil: user.photo_profil,
+        // Vrai si l'adresse e-mail est vérifiée (accepte les noms de champ courants).
+        emailVerified: Boolean(user.email_verified ?? user.email_verifie ?? user.email_verified_at),
     };
 }
 
@@ -377,6 +380,39 @@ export function AuthProvider({ children, mapUser = defaultMapUser }) {
 
     /*
     |--------------------------------------------------------------------------
+    | LOGOUT ALL (tous les appareils)
+    |--------------------------------------------------------------------------
+    */
+
+    const logoutAll = useCallback(
+        async (navigate) => {
+
+            try {
+
+                await logoutAllRequest();
+
+            } catch (error) {
+
+                console.error(
+                    "[Auth] logoutAll error",
+                    error
+                );
+
+            } finally {
+
+                clearAuth();
+
+                navigate?.("/", {
+                    replace: true,
+                });
+            }
+        },
+        [clearAuth]
+    );
+
+
+    /*
+    |--------------------------------------------------------------------------
     | CONTEXT VALUE
     |--------------------------------------------------------------------------
     */
@@ -427,6 +463,7 @@ export function AuthProvider({ children, mapUser = defaultMapUser }) {
 
             login,
             logout,
+            logoutAll,
             register: registerUser,
 
             refreshUser:
@@ -450,6 +487,7 @@ export function AuthProvider({ children, mapUser = defaultMapUser }) {
 
             login,
             logout,
+            logoutAll,
             registerUser,
             loadUser,
         ]

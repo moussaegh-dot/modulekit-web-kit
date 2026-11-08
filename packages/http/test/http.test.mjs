@@ -116,3 +116,31 @@ test("unwrap / extractErrors", () => {
   });
   assert.deepEqual(extractErrors(new Error("réseau")), { errors: {}, message: "Une erreur est survenue" });
 });
+
+test("authInterceptor : 403 ne notifie que pour un code déclaré dans unauthorizedErrorCodes", async () => {
+  let handler;
+  registerAuthInterceptor({ interceptors: { response: { use: (_ok, ko) => (handler = ko) } } });
+
+  let called = 0;
+  configureApi({ onUnauthorized: () => called++, unauthorizedErrorCodes: [] });
+
+  // Aucun code déclaré : un 403 reste une simple erreur.
+  await assert.rejects(handler({ response: { status: 403, data: { code: "compte_inactif" } }, config: { url: "/api/evenements" } }));
+  assert.equal(called, 0);
+
+  configureApi({ unauthorizedErrorCodes: ["compte_inactif"] });
+
+  await assert.rejects(handler({ response: { status: 403, data: { code: "compte_inactif" } }, config: { url: "/api/evenements" } }));
+  assert.equal(called, 1);
+
+  // Autre code, ou pas de code : pas de notification.
+  await assert.rejects(handler({ response: { status: 403, data: { code: "autre" } }, config: { url: "/api/evenements" } }));
+  await assert.rejects(handler({ response: { status: 403, data: {} }, config: { url: "/api/evenements" } }));
+  assert.equal(called, 1);
+
+  // Sur une URL de bootstrap (connexion ratée d'un compte suspendu) : pas de notification.
+  await assert.rejects(handler({ response: { status: 403, data: { code: "compte_inactif" } }, config: { url: "/api/auth/login" } }));
+  assert.equal(called, 1);
+
+  configureApi({ onUnauthorized: null, unauthorizedErrorCodes: [] });
+});

@@ -14,6 +14,13 @@ export {
   logout,
   register,
   fetchUser,
+  logoutAll,
+  forgotPassword,
+  resetPassword,
+  changePassword,
+  verifyEmail,
+  resendVerification,
   authEndpoints,
   configureAuthEndpoints,
 } from "./authService.js";
+export { fillEndpoint } from "./endpoints.js";
