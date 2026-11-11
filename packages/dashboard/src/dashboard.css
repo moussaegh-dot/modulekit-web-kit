@@ -1,0 +1,28 @@
+.mk-dashboard .mk-widget {
+  border-radius: 0.75rem;
+}
+
+.mk-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(var(--bs-primary-rgb, 13, 110, 253), 0.1);
+  color: rgb(var(--bs-primary-rgb, 13, 110, 253));
+  font-size: 1.1rem;
+}
+
+.mk-stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mk-stat-unit {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--bs-secondary-color, #6c757d);
+}

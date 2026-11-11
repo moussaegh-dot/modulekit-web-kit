@@ -2,7 +2,7 @@
 
 ## Le dépôt
 ```
-packages/    les 5 packages publiables (http, auth, engine, shell, crud)
+packages/    les 6 packages publiables (http, auth, engine, shell, crud, dashboard)
 playground/  application de test du kit (connexion, /__kit, une page enregistrée)
 tools/       check-imports, check-exports, check-contract (+ tests)
 docs/        contrat, convention, ce guide
@@ -23,7 +23,7 @@ Deux méthodes, au choix (à vérifier chez toi, je n'ai pas pu les exécuter) :
 
 **A. Liens locaux** (modifications visibles tout de suite, rechargement à chaud)
 ```bash
-cd mon-app && npm install ../modulekit-web/packages/{http,auth,engine,shell,crud}
+cd mon-app && npm install ../modulekit-web/packages/{http,auth,engine,shell,crud,dashboard}
 ```
 Dans le `vite.config.js` de l'application :
 ```js
@@ -50,6 +50,6 @@ Les packages sont publiés **en source** (JSX, résolu par Vite) : pas d'étape 
 
 ## Règles de contribution
 - Aucun terme métier dans `packages/` (voir `CONVENTION.md`).
-- Un package ne dépend que des packages « plus bas » : `http ← auth ← engine ← shell ← crud` (vérifié par `check-imports`).
+- Un package ne dépend que des packages « plus bas » : `http ← auth ← engine ← shell ← crud` ; `dashboard` ne dépend que de `http`, `auth` et `engine` (vérifié par `check-imports`).
 - Un nouveau comportement configurable passe par `configureKit` / `configureApi` / une prop, jamais par une constante en dur.
 - Tout comportement du contrat modifié → `contract.mjs` + test + `CONTRAT-BACKEND.md` dans le même commit.

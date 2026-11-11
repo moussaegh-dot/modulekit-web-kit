@@ -62,5 +62,12 @@ Module = {
 Validation : `422 { message, errors: { champ: [..] } }`.
 Sécurité : `419` → le client rafraîchit le cookie CSRF et rejoue **une** fois ; `401` (hors `/api/auth/user`, `/api/auth/login`) → `onUnauthorized` (session vidée).
 
+## Dashboard (modulekit-core ≥ 0.2) — module de type `dashboard`
+- **Manifeste** : `ui.widgets` est indexé par clé (comme `ui.metrics`) et **filtré par rôle pour l'utilisateur connecté** (`/api/modules/manifest`). Chaque widget : `key`, `label`, `component`, `props`, `colSpan` (sur 12), `rowSpan`, `description`, `icon`, `roles`, `dynamic` (vrai si le serveur fournit ses données). Le nom de la classe qui fournit les données n'est jamais exposé.
+- **Page** : `component: "Dashboard/Page"` (enregistrée par `registerDashboard()`), `bindings.widgets` = clés des widgets à afficher, dans l'ordre. Une clé absente du manifeste de l'utilisateur est ignorée (c'est ainsi que les rôles voient des tableaux de bord différents).
+- **Données d'un widget** : `GET /api/<module>/widgets/<clé>` → `{ success, data: { key, label, description, component, data } }`. `403` si l'utilisateur n'a pas le rôle, `404` si le widget n'existe pas ou n'a pas de source.
+- **Composant d'un widget** : cherché dans `WidgetRegistry` par clé de widget, puis par `component`. `registerDashboard()` fournit `StatCard` (données : `{ value, unit?, details?: [{ label, value?, tone? }] }`) et `ListCard` (données : `{ items: [{ title, subtitle?, meta?, badge?: { label, tone? } }], empty? }`) ; `tone` : `success | warning | danger | info | neutral`.
+- **Visibilité par rôle** : le manifeste n'affiche à chacun que les widgets de ses rôles (y compris pour le super-admin, qui ne voit que ses propres widgets) ; l'accès aux données, lui, reste ouvert au super-admin.
+
 ## Temps réel (optionnel)
 `POST /api/broadcasting/auth` pour les canaux privés ; Reverb via `VITE_REVERB_*` ou `configureRealtime()`.
